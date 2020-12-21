@@ -8,4 +8,4 @@ EULA=`read  -n 1 -p "[y/n] "`
 if [ "$EULA" = "y" ]; then
     echo "eula=true" > eula.txt
 fi
-java -server -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -Xmx$MC_XMX -Xms$MC_XMS -jar ftb.jar nogui
+java -server -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -Xmx$MaxMem -Xms$MinMem -jar ftb.jar nogui
