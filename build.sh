@@ -11,22 +11,22 @@ for dockerfile in **/Dockerfile; do
         image=$(basename "$imagePath")
         imageName="itachi1706/rpi-ftb:${image}-${tag}"
 
+        cd "$tagPath"
+        echo $tagPath
+
         # Run pre stuff
         if [[ -f "pre.sh" ]]
         then
+            echo "Found Pre Script. Running it first"
             chmod +x pre.sh
             ./pre.sh
         fi
     
         # Build image
         echo "Building and pushing $imageName"
-        cd "$tagPath"
-        echo $tagPath
         #docker buildx build --platform linux/arm/v7 --progress=plain --push -t "$imageName" .
     
         # Push image
         echo
-        #echo "Pushing $imageName"
-        #docker push "$imageName"
     )
 done
