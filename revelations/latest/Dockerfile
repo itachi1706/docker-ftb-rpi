@@ -9,26 +9,13 @@ RUN echo "#By changing the setting below to TRUE you are indicating your agreeme
 	echo "eula=TRUE" >> eula.txt
 RUN addgroup -S minecraft -g 1002 && adduser -u 1002 -S minecraft -G minecraft
 RUN chmod u+x start.sh
+RUN chmod u+x ftbstart.sh
 
-FROM arm32v7/openjdk:8-jre-slim
+FROM itachi1706/rpi-ftb:jdk8-base
 
 MAINTAINER Kenneth (kenneth@itachi1706.com)
 
-# Updating container
-RUN apt-get update && \
-	apt-get install apt-utils --yes && \
-	apt-get upgrade --yes --allow-remove-essential && \
-	apt-get clean && \
-	rm -rf /var/lib/apt/lists/*
-
-# Setting workdir
-WORKDIR /minecraft
-
-# Changing user to root
 USER root
-
-# Create user and fix permissions
-RUN useradd -m -U minecraft
 
 # Copy files
 COPY --chown=minecraft:minecraft --from=getfile /minecraft/ .
