@@ -1,0 +1,11 @@
+Search: https://api.modpacks.ch/public/modpack/search/8?term=${searchTerm}
+Get: https://api.modpacks.ch/public/modpack/${packID}
+Popular Installs: https://api.modpacks.ch/public/modpack/popular/installs/12
+Popular Plays: https://api.modpacks.ch/public/modpack/popular/plays/12
+Featured Packs: https://api.modpacks.ch/public/modpack/featured/5
+Changelog: https://api.modpacks.ch/public/modpack/${packID}/${versionID}/changelog
+Get Pack Manifest: https://api.modpacks.ch/public/modpack/${packID}
+Get Pack Version Manifest: https://api.modpacks.ch/public/modpack/${packID}/${Version}
+Server Download:
+- Windows: https://api.modpacks.ch/public/modpack/${packID}/${versionID}/server/windows
+- Linux: https://api.modpacks.ch/public/modpack/${packID}/${versionID}/server/linux
