@@ -32,7 +32,7 @@ USER root
 RUN useradd -m -U minecraft
 
 # Copy files
-COPY --chown=minecraft:minecraft --from=getfile /minecraft/* .
+COPY --chown=minecraft:minecraft --from=getfile /minecraft/ .
 # RUN ls -lsh
 
 USER minecraft
