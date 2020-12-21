@@ -24,9 +24,7 @@ for dockerfile in **/Dockerfile; do
     
         # Build image
         echo "Building and pushing $imageName"
-        #docker buildx build --platform linux/arm/v7 --progress=plain --push -t "$imageName" .
-    
-        # Push image
+        docker buildx build --platform linux/arm/v7 --progress=plain --push -t "$imageName" .
         echo
     )
 done
