@@ -9,6 +9,13 @@ for dockerfile in **/Dockerfile; do
         tag=$(basename "$tagPath")
         image=$(basename "$imagePath")
         imageName="itachi1706/rpi-ftb:${image}-${tag}"
+
+        # Run pre stuff
+        if [[ -f "pre.sh" ]]
+        then
+            chmod +x pre.sh
+            ./pre.sh
+        fi
     
         # Build image
         echo "Building $imageName"
