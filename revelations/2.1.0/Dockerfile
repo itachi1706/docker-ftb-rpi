@@ -18,7 +18,7 @@ WORKDIR /minecraft
 # Creating user and downloading files
 RUN mkdir -p /minecraft/world && \
 	wget -q https://media.forgecdn.net/files/2574/714/FTBRevelationServer_2.1.0.zip && \
-	unzip FTBRevelationServer_2.1.0.zip && \
+	unzip -q FTBRevelationServer_2.1.0.zip && \
 	rm FTBRevelationServer_2.1.0.zip && \
 	chmod u+x FTBInstall.sh ServerStart.sh && \
 	echo "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula)." > eula.txt && \

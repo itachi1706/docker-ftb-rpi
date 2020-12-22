@@ -8,8 +8,8 @@ RUN echo "#By changing the setting below to TRUE you are indicating your agreeme
 	echo "$(date)" >> eula.txt && \
 	echo "eula=TRUE" >> eula.txt
 RUN addgroup -S minecraft -g 1002 && adduser -u 1002 -S minecraft -G minecraft
-RUN chmod u+x start.sh
-RUN chmod u+x ftbstart.sh
+RUN chmod u+x settings.sh
+RUN chmod u+x ServerStart.sh
 
 FROM itachi1706/rpi-ftb:jdk8-base
 
