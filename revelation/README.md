@@ -1,5 +1,5 @@
-# FTB Revelations
-Feed The Beast Revelations modpack
+# FTB Revelation
+Feed The Beast Revelation modpack
 made by Feed The Beast at https://feed-the-beast.com
 
 Modpack for Minecraft 1.12.2.
@@ -18,12 +18,12 @@ Access the console to op and whitelist.
 ## Running Container
 ### Running data container:
 ```bash
-docker run --name [name of your data container] itachi1706/rpi-ftb:revelations-[version] echo 'Data-only container'
+docker run --name [name of your data container] itachi1706/rpi-ftb:revelation-[version] echo 'Data-only container'
 ```
 
 ### Running server:
 ```bash
-docker run --tty=true --interactive=true --detach=true --name=[name of your container] --volumes-from [name of your data container] --publish=[port on your host]:25565 itachi1706/rpi-ftb:revelations-[version]
+docker run --tty=true --interactive=true --detach=true --name=[name of your container] --volumes-from [name of your data container] --publish=[port on your host]:25565 itachi1706/rpi-ftb:revelation-[version]
 ```
 
 When upgrading sometime items have been removed and therefore you have to confirm removal. </br>
