@@ -2,9 +2,12 @@ FROM itachi1706/rpi-ftb:jdk8-base
 
 MAINTAINER Kenneth (kenneth@itachi1706.com)
 
+# Changing user to root
+USER root
+
 # Updating container
 RUN apt-get update && \
-	apt-get install apt-utils --yes && \
+	apt-get install apt-utils wget unzip --yes && \
 	apt-get upgrade --yes --allow-remove-essential && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
@@ -12,12 +15,8 @@ RUN apt-get update && \
 # Setting workdir
 WORKDIR /minecraft
 
-# Changing user to root
-USER root
-
 # Creating user and downloading files
-RUN useradd -m -U minecraft && \
-	mkdir -p /minecraft/world && \
+RUN mkdir -p /minecraft/world && \
 	wget --no-check-certificate https://media.forgecdn.net/files/2746/968/FTBRevelationServer_3.1.0.zip && \
 	unzip FTBRevelationServer_3.1.0.zip && \
 	rm FTBRevelationServer_3.1.0.zip && \
