@@ -42,6 +42,7 @@ To exit: CTRL+P CTRL+Q
 | --- | --- | --- |
 | MC_XMX | Max Memory for game | 4096M |
 | MC_XMS | Min Memory for game | 1024M |
+| MAX_RAM | Max Memory for game (Before 3.2.0) | 4096M |
 
 
 The first time the server starts it creates the server.properties file with default settings and spawns "world". 
