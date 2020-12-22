@@ -4,7 +4,7 @@ FROM openjdk:8-jre-slim as jdk-amd64
 
 FROM jdk-$TARGETARCH$TARGETVARIANT
 
-MAINTAINER Kenneth (kenneth@itachi1706.com)
+LABEL maintainer="kenneth@itachi1706.com"
 
 # Updating container
 RUN apt-get update && \

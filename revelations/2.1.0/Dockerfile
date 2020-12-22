@@ -1,6 +1,6 @@
 FROM itachi1706/rpi-ftb:jdk8-base
 
-MAINTAINER Kenneth (kenneth@itachi1706.com)
+LABEL maintainer="kenneth@itachi1706.com"
 
 # Changing user to root
 USER root
