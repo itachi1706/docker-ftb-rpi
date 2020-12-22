@@ -31,7 +31,7 @@ jobs:
         -
             name: Build base-image
             run: |
-                docker buildx build --platform linux/arm/v7,linux/arm64,linux/amd64 -t itachi1706/rpi-ftb:jdk8-base --push -f baseimage.txt .
+                docker buildx build --platform linux/arm/v7,linux/arm64,linux/amd64 -t itachi1706/rpi-ftb:jdk8-base --pull --push -f baseimage.txt .
 
 
     release:
