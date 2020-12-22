@@ -17,7 +17,7 @@ WORKDIR /minecraft
 
 # Creating user and downloading files
 RUN mkdir -p /minecraft/world && \
-	wget --no-check-certificate https://media.forgecdn.net/files/2712/63/FTBRevelationServer_3.0.1.zip && \
+	wget --no-check-certificate -q https://media.forgecdn.net/files/2712/63/FTBRevelationServer_3.0.1.zip && \
 	unzip FTBRevelationServer_3.0.1.zip && \
 	rm FTBRevelationServer_3.0.1.zip && \
 	chmod u+x FTBInstall.sh ServerStart.sh && \
