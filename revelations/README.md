@@ -18,12 +18,12 @@ Access the console to op and whitelist.
 ## Running Container
 ### Running data container:
 ```bash
-docker run --name [name of your data container] itachi1706/rpi-ftb:revelations-<version> echo 'Data-only container'
+docker run --name [name of your data container] itachi1706/rpi-ftb:revelations-[version] echo 'Data-only container'
 ```
 
 ### Running server:
 ```bash
-docker run --tty=true --interactive=true --detach=true --name=[name of your container] --volumes-from [name of your data container] --publish=[port on your host]:25565 itachi1706/rpi-ftb:revelations-<version>
+docker run --tty=true --interactive=true --detach=true --name=[name of your container] --volumes-from [name of your data container] --publish=[port on your host]:25565 itachi1706/rpi-ftb:revelations-[version]
 ```
 
 When upgrading sometime items have been removed and therefore you have to confirm removal. </br>
@@ -33,7 +33,7 @@ Exit with `CTRL+P CTRL+Q`.
 To access the console:
 ```bash
 docker attach [name of container]
-<Run your commands>
+[Run your commands]
 To exit: CTRL+P CTRL+Q
 ```
 
