@@ -2,7 +2,7 @@ FROM arm32v7/openjdk:8-jre-slim as jdk-armv7
 FROM arm64v8/openjdk:8-jre-slim as jdk-arm64
 FROM openjdk:8-jre-slim as jdk-amd64
 
-FROM jdk-$TARGETARCH
+FROM jdk-$TARGETARCH$TARGETVARIANT
 
 MAINTAINER Kenneth (kenneth@itachi1706.com)
 
