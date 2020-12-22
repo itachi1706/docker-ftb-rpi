@@ -1,0 +1,25 @@
+FROM arm32v7/openjdk:8-jre-slim as jdk-armv7
+FROM arm64v8/openjdk:8-jre-slim as jdk-arm64
+FROM openjdk:8-jre-slim as jdk-amd64
+
+FROM jdk-$TARGETARCH
+
+MAINTAINER Kenneth (kenneth@itachi1706.com)
+
+# Updating container
+RUN apt-get update && \
+	apt-get install apt-utils --yes && \
+	apt-get upgrade --yes --allow-remove-essential && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+
+# Setting workdir
+WORKDIR /minecraft
+
+# Changing user to root
+USER root
+
+# Create user and fix permissions
+RUN useradd -m -U minecraft
+
+USER minecraft
