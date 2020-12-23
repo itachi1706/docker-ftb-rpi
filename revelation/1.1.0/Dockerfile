@@ -17,6 +17,7 @@ WORKDIR /minecraft
 
 # Creating user and downloading files
 RUN mkdir -p /minecraft/world && \
+    mkdir -p /minecraft/logs && \
 	wget -q https://media.forgecdn.net/files/2514/256/FTBRevelationServer_1.1.0.zip && \
 	unzip -q FTBRevelationServer_1.1.0.zip && \
 	rm FTBRevelationServer_1.1.0.zip && \

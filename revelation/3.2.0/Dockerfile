@@ -4,12 +4,14 @@ ADD server .
 
 # Download necessary files
 RUN mkdir -p /minecraft/world
+RUN mkdir -p /minecraft/logs
 RUN echo "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula)." > eula.txt && \
 	echo "$(date)" >> eula.txt && \
 	echo "eula=TRUE" >> eula.txt
 RUN addgroup -S minecraft -g 1002 && adduser -u 1002 -S minecraft -G minecraft
 RUN chmod u+x settings.sh
 RUN chmod u+x ServerStart.sh
+RUN chown -R minecraft:minecraft /minecraft
 
 FROM itachi1706/rpi-ftb:jdk8-base
 

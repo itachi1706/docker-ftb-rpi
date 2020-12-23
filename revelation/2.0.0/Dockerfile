@@ -17,6 +17,7 @@ WORKDIR /minecraft
 
 # Creating user and downloading files
 RUN mkdir -p /minecraft/world && \
+    mkdir -p /minecraft/logs && \
 	wget --no-check-certificate -q https://media.forgecdn.net/files/2570/163/FTBRevelationServer_2.0.0.zip && \
 	unzip -q FTBRevelationServer_2.0.0.zip && \
 	rm FTBRevelationServer_2.0.0.zip && \

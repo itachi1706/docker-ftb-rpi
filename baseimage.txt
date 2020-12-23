@@ -20,6 +20,6 @@ WORKDIR /minecraft
 USER root
 
 # Create user and fix permissions
-RUN useradd -m -U minecraft
+RUN useradd -m -U minecraft && chown -R minecraft:minecraft /minecraft
 
 USER minecraft
