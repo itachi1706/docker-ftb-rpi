@@ -22,9 +22,16 @@ for dockerfile in **/Dockerfile; do
             ./pre.sh
         fi
     
-        # Build image
-        echo "Building and pushing $imageName"
-        docker buildx build --pull --platform linux/arm/v7,linux/arm64,linux/amd64 --progress=plain --push -t "$imageName" .
+        # Build image (5 retries)
+        echo "Building and pushing $imageName. Attempt $n/5"
+        n=0
+        until [ "$n" -ge 5 ]
+        do
+            docker buildx build --pull --platform linux/arm/v7,linux/arm64,linux/amd64 --progress=plain --push -t "$imageName" . && break
+            n=$((n+1)) 
+            echo "Building $imageName failed. Retrying attempt $n/5 in 30 seconds"
+            sleep 30
+        done
         echo
     )
 done

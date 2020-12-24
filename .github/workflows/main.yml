@@ -47,17 +47,7 @@ jobs:
             uses: docker/setup-buildx-action@v1
             with:
                 version: latest
-        -   name: Run Script with 3 retries
-            id: retry
-            uses: nick-invision/retry@v2.2.0
-            with:
-                timeout_minutes: 60
-                max_attempts: 3
-                retry_wait_seconds: 30
-                command: |
-                    chmod +x build.sh && ./build.sh
-        -   name: Show results of script
-            run: echo $retry_attempt. Tried $retry_result times
-            env:
-                retry_result: ${{ steps.retry.outputs.total_attempts }}
-                retry_attempt: ${{ steps.retry.outcome }} 
+        -   name: Run Script
+            command: |
+                chmod +x build.sh
+                ./build.sh
