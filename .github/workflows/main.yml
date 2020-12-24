@@ -48,6 +48,6 @@ jobs:
             with:
                 version: latest
         -   name: Run Script
-            command: |
+            run: |
                 chmod +x build.sh
                 ./build.sh
