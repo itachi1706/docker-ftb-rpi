@@ -16,14 +16,10 @@ Settings will reset when upgrading.
 Access the console to op and whitelist.
 
 ## Running Container
-### Running data container:
+### Running image
 ```bash
-docker run --name [name of your data container] itachi1706/rpi-ftb:revelation-[version] echo 'Data-only container'
-```
-
-### Running server:
-```bash
-docker run --tty=true --interactive=true --detach=true --name=[name of your container] --volumes-from [name of your data container] --publish=[port on your host]:25565 itachi1706/rpi-ftb:revelation-[version]
+docker volume create [volume name]
+docker run -d -it --name=[container name] -v [volume name]:/minecraft/world -v [path to logs]:/mineecraft/log -p [host port]:25565 itachi1706/rpi-ftb:revelation-[version]
 ```
 
 When upgrading sometime items have been removed and therefore you have to confirm removal.   
