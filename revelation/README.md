@@ -26,11 +26,11 @@ docker run --name [name of your data container] itachi1706/rpi-ftb:revelation-[v
 docker run --tty=true --interactive=true --detach=true --name=[name of your container] --volumes-from [name of your data container] --publish=[port on your host]:25565 itachi1706/rpi-ftb:revelation-[version]
 ```
 
-When upgrading sometime items have been removed and therefore you have to confirm removal. </br>
+When upgrading sometime items have been removed and therefore you have to confirm removal.   
 To do so run `docker attach [name of your container]` and type `/fml confirm` when prompted to confirm or cancel.   
 Exit with `CTRL+P CTRL+Q`.   
 
-To access the console:
+### To access the console:
 ```bash
 docker attach [name of container]
 [Run your commands]
@@ -44,8 +44,9 @@ To exit: CTRL+P CTRL+Q
 | MC_XMS | Min Memory for game | 1024M |
 | MC_PERMGEN | Perm Gen Memory | 256M |
 
+  
 
 The first time the server starts it creates the server.properties file with default settings and spawns "world". 
-Not recommended to change these settings be hand.
+Not recommended to change these settings by hand.
 
 When upgrading: World reset is required when upgrading from v1/v2 to v3.0.1 or higher.
